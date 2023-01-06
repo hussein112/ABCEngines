@@ -1,0 +1,637 @@
+:root{
+    --pr: #FFFFFF;
+    --se: #3AB6A1;
+    --te: #315E6D;
+    --fo: #E79822;
+    --overlay: rgb(49, 94, 109, 0.4);
+
+
+    --transition: .4s;
+}
+
+/* Start General Styles */
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logo{
+    width: 80px;
+}
+
+.logo * {
+    width: 100%;
+}
+
+#logo{
+    max-height: 80px;
+}
+
+.logo .cls-1{
+    fill:none;
+    stroke: var(--se);
+    stroke-linecap:round;
+    stroke-miterlimit:10;
+    stroke-width: 1px;
+}
+
+
+.cls-2{
+    font-size:2px;
+}
+
+.cls-2,.cls-3{
+    font-family: inherit;
+}
+
+.cls-3{
+    font-size:9px;
+}
+
+text{
+    fill: var(--fo);
+}
+
+/* motors */
+.cls-2{
+    fill: var(--fo);
+}
+
+
+
+#moving #moving1{
+    stroke: var(--fo);
+}
+
+
+section{
+    margin-top: 30px;
+    animation: animateSection var(--transition) ease-in-out forwards;
+    animation-play-state: paused;
+}
+
+
+@keyframes animateSection {
+    0%{
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+section h1{
+    text-transform: uppercase;
+    color: var(--te);
+    height: 10%;
+
+    display: grid;
+    place-items: center;
+}
+
+/* End General Styles */
+
+
+
+/* Start Header */
+header{
+    height: fit-content;
+    color: var(--pr);
+
+    position: relative;
+
+    animation: animateSection var(--transition) ease-in-out forwards;
+}
+
+@media (max-width: 1400px){
+    header{
+        min-height: 100vh;
+    }
+}
+
+header .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: urL(images/header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--overlay);
+    clip-path: polygon(100% 0, 100% 70%, 49% 100%, 0 100%, 0 0);
+}
+
+header .overlay::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay);
+    clip-path: polygon(100% 0, 100% 70%, 49% 100%, 0 100%, 0 0);
+}
+
+
+@media (max-width: 768px){
+    header .overlay{
+        clip-path: none;
+    }
+    
+    header .overlay::after{
+        clip-path: none;
+    }
+}
+
+header .links,
+header .about,
+header .services,
+header .view-products{
+    position: relative;
+    z-index: 1;
+}
+
+header .navbar-toggler{
+    background-color: var(--se);
+    transition: var(--transition);
+}
+
+header .navbar-toggler:focus{
+    box-shadow: none;
+    background-color: var(--fo);
+}
+
+
+.links input{
+    background-color: transparent;
+}
+
+.links input::placeholder{
+    color: var(--pr);
+}
+
+.links input:focus{
+    background-color: transparent;
+    color: var(--pr);
+    caret: var(--pr);
+}
+
+
+.links a{
+    color: var(--pr);
+}
+
+.links a:hover{
+    color: var(--fo);
+}
+
+
+.links ul{
+    width: 100%;
+}
+
+.links ul li{
+    width: calc(100% / 5);
+    text-align: center;
+
+}
+
+.links ul li a{
+    position: relative;
+}
+
+.links ul li a::before,
+.links ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--fo);
+    scale: 0;
+    transition: var(--transition);
+}
+
+.links ul li a::before{
+    top: 0;
+}
+
+.links ul li a::after{
+    bottom: 0;
+}
+
+.links ul li a:hover::before,
+.links ul li a:hover::after{
+    scale: 1;
+}
+
+
+@media (max-width: 991px){
+    .links ul li{
+        width: 100%;
+    }
+}
+
+
+.services{
+    width: 100%;
+}
+
+
+.service{
+    width: calc(95% / 3);
+}
+
+@media (max-width: 768px){
+    .service{
+        width: 100%;
+    }
+}
+
+
+.services iconify-icon{
+    font-size: 5rem;
+}
+
+.services h2,
+.services iconify-icon{
+    color: var(--fo);
+    cursor: pointer;
+}
+
+
+.service{
+    text-align: center;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.service:hover{
+    transition: var(--transition);
+    scale: 1.09;
+    background: var(--overlay);
+}
+
+
+.view-products{
+    right: 50px;
+    bottom: 2vh;
+}
+
+.view-products a{
+    border: 1px solid var(--fo);
+    color: var(--fo);
+    position: relative;
+}
+
+
+.view-products a:hover{
+    background: var(--overlay);
+}
+
+
+@media (max-width: 768px){
+    .view-products{
+        right: initial;
+        bottom: 10px;
+        justify-content: center !important;
+    }
+}
+
+/* End Header */
+
+
+
+/* Start Partners Section */
+
+#partners{
+    text-align: center;
+    color: var(--te);
+}
+
+
+
+.logos{
+    background-image: url("images/Brands.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+
+.logos iconify-icon{
+    font-size: 10em;
+    color: var(--pr);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.logos iconify-icon:hover{
+    scale: 1.2;
+    color: var(--se);
+}
+
+/* End Partners Section */
+
+
+
+
+
+/* Start Products Section */
+
+
+.text,
+.slider{
+    width: calc(95% / 2);
+}
+
+
+@media (max-width: 992px) {
+    .text,
+    .slider{
+        width: 100%;
+    }
+}
+
+.slider{
+    position: relative;
+}
+
+
+.carousel img{
+    width: 600px;
+    height: 400px;
+    border-radius: 15px;
+}
+
+
+.carousel-caption{
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+.text h2{
+    display: inline;
+    color: var(--te);
+}
+
+.text h2:last-of-type{
+    color: var(--fo);
+}
+
+
+
+/* End Products Section */
+
+
+
+
+/* Start Branches Section */
+
+#branches .container{
+    height: calc(90% - 20px);
+}
+
+
+.addresses,
+.vector{
+    width: calc(95% / 2);
+}
+
+.vector img{
+    width: 90%;
+    height: 400px;
+}
+
+
+@media (max-width: 768px) {
+    .addresses,
+    .vector{
+        width: 100%;
+    }
+}
+
+.vector svg{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 576px){
+    .vector{
+        display: none;
+    }
+}
+
+.addresses{
+    height: 400px;
+    text-align: center;
+}
+
+.location .icon iconify-icon{
+    color: var(--se);
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 5rem;
+}
+
+.location .icon iconify-icon:hover{
+    color: var(--te);
+}
+
+
+.icon iconify-icon{
+    font-size: 3em;
+    color: var(--pr);
+}
+
+
+.address{
+    flex: 10%;
+}
+
+.address * {
+    padding: 0;
+    margin: 0;
+}
+
+/* End Branches Section */
+
+
+/* Start Contact Section */
+
+.by-email,
+.by-other{
+    padding: 5px;
+}
+
+
+@media (max-width: 768px){
+    .by-email,
+    .by-other{
+        margin: 5px;
+    }
+}
+
+
+.by-email{
+    flex: 55%;
+    align-self: flex-end;
+}
+
+
+.by-other{
+    flex: 45%;
+    background-color: var(--se);
+    color: var(--pr);
+}
+
+@media (max-width: 768px){
+    .by-other{
+        height: auto;
+        max-height: unset;
+        min-height: 90vh;
+    }
+}
+
+.by-other li a{
+    text-decoration: none;
+    color: var(--pr);
+}
+
+
+.by-email form{
+    width: 100%;
+}
+
+.by-email form .name .fname,
+.by-email form .name .lname{
+    flex: 50%;
+}
+
+.lname{
+    margin-left: 2px;
+}
+
+.by-other li:hover{
+    transition: var(--transition);
+    background-color: var(--fo);
+    scale: 1.09;
+}
+
+
+.by-email form div{
+    position: relative;
+}
+
+
+.by-email form span{
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    padding: 0 5px;
+    background-color: var(--pr);
+    transition: var(--transition);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.by-email input:focus,
+.by-email textarea:focus{
+    box-shadow: none;
+}
+
+
+.by-email input:focus + span,
+.by-email textarea:focus + span,
+.by-email input:not(:placeholder-shown) + span,
+.by-email textarea:not(:placeholder-shown) + span{
+    top: -13px;
+    opacity: 1;
+    font-size: 15px;
+}
+
+/* End Contact Section */
+
+
+
+
+/* Start Footer */
+
+footer{
+    margin-top: 80px;
+    background-color: var(--te);
+    color: var(--pr);
+}
+
+
+footer .copy{
+    margin: 0; 
+    padding: 0;
+}
+
+
+footer .social-media iconify-icon{
+    font-size: 3em;
+    color: var(--pr);
+    transition: var(--transition);
+}
+
+footer .social-media iconify-icon:hover{
+    color: var(--se);
+}
+
+footer .logo{
+    width: 200px !important;
+    margin: 10px auto;
+}
+
+footer .site-map,
+footer .about{
+    flex: 45%;
+}
+
+.site-map{
+    text-align: center;
+}
+
+.site-map nav{
+    max-height: 500px;
+}
+
+.site-map a {
+    text-decoration: none;
+    padding: 10px 5px;
+    color: var(--pr);
+    transition: var(--transition);
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.site-map a:hover{
+    background-color: var(--fo);
+}
+
+
+
+footer .copy{
+    border-top: 0.5px solid #ddd;
+}
+
+.copy p{
+    margin-top: 15px;
+}
+
+.copy a{
+    text-decoration: none;
+    color: var(--fo);
+}
+/* End Footer */
