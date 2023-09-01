@@ -1,6 +1,6 @@
 # About
 
-Free basic HTML, CSS, and Bootsrap Template for simple & modern website for a car company.
+Free basic HTML, CSS, and Bootsrap Template for simple & modern website for cars company.
 
 # Design Scheme
 
